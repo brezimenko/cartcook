@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    <a [href]="recipe.href" target="_blank">{{recipe.title}}</a>
+  </div>
+  <div class="card-body">
+    <div class="d-flex justify-content-start">
+      <img [src]="recipe.thumbnail ? recipe.thumbnail : 'assets/img/no_image.png'" alt="Item">
+      <div class="truncator">
+        <p class="ingredient-summary">You will need the following ingredients: <span
+          *ngFor="let ingredient of recipe.ingredients.split(',')">
+      {{ingredient}}, </span>...</p>
+        <div class="button-bar">
+          <button class="btn btn-sm btn-primary" (click)="areDetailsShown = !areDetailsShown">{{areDetailsShown ? 'CLOSE THE LIST' : 'SEE ALL INGREDIENTS'}}</button>
+          <a [href]="recipe.href" target="_blank" class="btn btn-sm btn-primary">GET THE RECIPE</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul [ngClass]="{'show': areDetailsShown}">
+    <li *ngFor="let ingredient of recipe.ingredients.split(',')">
+      {{ingredient}}
+    </li>
+  </ul>
+</div>

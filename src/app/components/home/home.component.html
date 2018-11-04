@@ -1,0 +1,56 @@
+<header class="masthead text-center text-white">
+  <div class="masthead-content">
+    <div class="container flex-column d-flex align-items-center justify-content-center">
+      <div class="row man-row">
+        <span class="howto" id="first-how-to" *ngIf="manual">{{manual}}</span>
+        <div class="col d-flex">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><img src="assets/img/magnifying-glass.png" alt="Search icon"></span>
+            </div>
+            <input type="search"
+                   class="form-control input-lg input-left"
+                   placeholder="Enter name of the dish"
+                   [formControl]="searchName">
+          </div>
+          <div class="input-group">
+            <input type="search"
+                   class="form-control input-lg input-right"
+                   placeholder="Add an ingredient"
+                   [(ngModel)]="ingredientToAdd"
+                   (keydown.enter)="addIngredient($event)">
+            <div class="append">
+              <button class="btn add-btn input-group-text"><img src="assets/img/add.png" alt="add"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="ingredients.length > 0">
+        <div class="col badge-col d-flex">
+          <div class="d-flex justify-content-between align-items-center badge badge-success" *ngFor="let ingredient of ingredients; let i = index">
+            {{ingredient}} <img src="assets/img/x-button.png" alt="Delete icon" (click)="deleteIngredient(i)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<section>
+  <div class="container" *ngIf="results$ | async as results; else doSth">
+    <div class="row">
+      <div class="col">
+        <app-card *ngFor="let recipe of results" [recipe]="recipe"></app-card>
+      </div>
+    </div>
+  </div>
+  <ng-template #doSth>
+    <div class="container go-search">
+      <div class="row">
+        <div class="col d-flex flex-column align-items-center justify-content-center">
+          <p>Don't lose any more <span>thyme</span>. Search for your favorite recipe and start cooking!</p>
+          <img src="assets/img/carrot.png" alt="carrot">
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</section>

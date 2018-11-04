@@ -1,0 +1,97 @@
+.man-row {
+  position: relative;
+}
+.masthead {
+  background: url("/assets/img/hero.jpg") no-repeat center;
+  background-size: cover;
+  height: 40vh;
+  min-height: 15rem;
+  .masthead-content {
+    height: inherit;
+    min-height: inherit;
+    .container {
+      height: inherit;
+      min-height: inherit;
+    }
+  }
+}
+.go-search {
+  height: 60vh;
+  .row {
+    height: 60vh;
+    .col {
+      p {
+        font-size:1.2rem;
+        span {
+          color: #8b262d;
+        }
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+.append {
+  .add-btn {
+    img {
+      width:1.5rem;
+    }
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height:100%;
+    z-index:1;
+    border-left:none;
+  }
+}
+.input-group {
+  .input-group-prepend {
+    span {
+      img {
+        width:1.5rem;
+      }
+      border-right: none;
+    }
+  }
+  .input-left {
+    border-left: none;
+    margin-right:.5rem;
+  }
+  .input-right {
+    border-right: none;
+    margin-left:.5rem;
+  }
+  .input-lg {
+    padding: 1.5rem 1rem;
+    line-height: 1;
+    font-size: 1.1rem;
+  }
+}
+.badge-col {
+  margin-top: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.9);
+  border-radius: .25rem;
+
+  .badge {
+    padding: .5rem;
+    margin: .25rem;
+    cursor: pointer;
+    img {
+      width:1rem;
+      margin-left:.25rem;
+      display:inline-block;
+    }
+  }
+}
+.howto {
+  position: absolute;
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1rem rgba(0, 0 ,0 ,.9);
+  padding: .5rem 1rem;
+}
+#first-how-to {
+  top: -6rem;
+  left: 1rem;
+}

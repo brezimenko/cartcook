@@ -1,0 +1,63 @@
+.card {
+  overflow: hidden;
+  margin-top: 2rem;
+  .card-header {
+    background-color: #CFD8DC;
+    a {
+      text-transform: uppercase;
+      color: #3a3a3a;
+      font-weight: 500;
+    }
+  }
+  .card-body {
+    img {
+      width: 8rem;
+      max-height: 8rem;
+    }
+  }
+}
+.truncator, .truncator .ingredient-summary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ingredient-summary {
+  padding-left:1.5rem;
+  font-weight: 500;
+  span {
+    font-weight: 400;
+  }
+}
+ul {
+  list-style-type: none;
+  max-height: 0;
+  transition: max-height .5s;
+  padding-inline-start: 0;
+  margin-bottom:0;
+  li {
+    text-transform: capitalize;
+    padding: .5rem 2rem;
+    border-top: 1px solid rgba(0,0,0,.2);
+  }
+  li:nth-child(2n) {
+    background-color: #f2f2f2;
+  }
+}
+.button-bar {
+  padding-left: 1rem;
+  .btn {
+    margin: .5rem;
+  }
+}
+.show {
+  max-height: 50rem;
+  transition: max-height .5s;
+}
+@keyframes heightFull {
+  from {height: 0;}
+  to {height: initial;}
+}
+@keyframes heightNull {
+  from {height: initial;}
+  to {height: 0;}
+}
